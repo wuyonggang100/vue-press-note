@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>babel 的插件 | gang&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="我的个人网站">
+    
+    <link rel="preload" href="/assets/css/0.styles.7e00a459.css" as="style"><link rel="preload" href="/assets/js/app.f835a974.js" as="script"><link rel="preload" href="/assets/js/2.4328fceb.js" as="script"><link rel="preload" href="/assets/js/10.a49e9ac0.js" as="script"><link rel="prefetch" href="/assets/js/11.737a2acd.js"><link rel="prefetch" href="/assets/js/12.1623d84f.js"><link rel="prefetch" href="/assets/js/13.c3ae7b39.js"><link rel="prefetch" href="/assets/js/14.697be0e4.js"><link rel="prefetch" href="/assets/js/15.b423fa58.js"><link rel="prefetch" href="/assets/js/16.784768a9.js"><link rel="prefetch" href="/assets/js/17.1713f54d.js"><link rel="prefetch" href="/assets/js/18.d49ce26d.js"><link rel="prefetch" href="/assets/js/19.594596e0.js"><link rel="prefetch" href="/assets/js/20.ae02f01d.js"><link rel="prefetch" href="/assets/js/21.83543091.js"><link rel="prefetch" href="/assets/js/22.ff50eac7.js"><link rel="prefetch" href="/assets/js/23.b24e81e0.js"><link rel="prefetch" href="/assets/js/24.14b8279a.js"><link rel="prefetch" href="/assets/js/25.c49e98e3.js"><link rel="prefetch" href="/assets/js/26.4f0b3843.js"><link rel="prefetch" href="/assets/js/27.5ca41cd1.js"><link rel="prefetch" href="/assets/js/28.17216642.js"><link rel="prefetch" href="/assets/js/29.7a282f33.js"><link rel="prefetch" href="/assets/js/3.e48146a6.js"><link rel="prefetch" href="/assets/js/30.850a2308.js"><link rel="prefetch" href="/assets/js/31.0dad49ed.js"><link rel="prefetch" href="/assets/js/32.607e15a2.js"><link rel="prefetch" href="/assets/js/33.0a57ef8a.js"><link rel="prefetch" href="/assets/js/34.44d68ba3.js"><link rel="prefetch" href="/assets/js/35.76cec9ca.js"><link rel="prefetch" href="/assets/js/36.490c4788.js"><link rel="prefetch" href="/assets/js/4.55eb244d.js"><link rel="prefetch" href="/assets/js/5.7d12f753.js"><link rel="prefetch" href="/assets/js/6.44237979.js"><link rel="prefetch" href="/assets/js/7.4927ac18.js"><link rel="prefetch" href="/assets/js/8.d9acc34e.js"><link rel="prefetch" href="/assets/js/9.4603156d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7e00a459.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">gang's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="温故" class="dropdown-title"><span class="title">温故</span> <span class="arrow down"></span></button> <button type="button" aria-label="温故" class="mobile-dropdown-title"><span class="title">温故</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  算法题库
+</a></li></ul></div></div> <a href="https://github.com/wuyongganggang100/vue-press-note" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="温故" class="dropdown-title"><span class="title">温故</span> <span class="arrow down"></span></button> <button type="button" aria-label="温故" class="mobile-dropdown-title"><span class="title">温故</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/node/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/algorithm/" class="nav-link">
+  算法题库
+</a></li></ul></div></div> <a href="https://github.com/wuyongganggang100/vue-press-note" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>浏览器相关</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/browser/浏览器API/01.url到 UI 渲染过程.html" class="sidebar-link">url到 UI 渲染过程</a></li><li><a href="/browser/浏览器API/设备振动，屏幕强度，横竖屏，电池.html" class="sidebar-link">浏览器API</a></li><li><a href="/browser/浏览器API/DOM 性能API.html" class="sidebar-link">性能查看与监控</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>node</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>babel 系列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>记不住的 js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>git 系列</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h4 id="babel-的插件"><a href="#babel-的插件" class="header-anchor">#</a> babel 的插件</h4> <ol><li><h4 id="插件"><a href="#插件" class="header-anchor">#</a> 插件</h4> <blockquote><ul><li>babel 做任何事都需要插件来实现，可以在preset 中开启一组插件（即插件组合）而不是单独的插件。</li> <li>转换插件和语法插件：转换插件可以转换对应的语法，因此可以按实际需求来使用；转换插件可以自动启用相应的语法插件，因此，如果使用了相应的转换插件，则无需指定语法插件。</li> <li>Babel插件一般尽可能拆成小的力度，开发者可以按需引进。比如对ES6转ES5的功能，Babel官方拆成了20+个插件。开发者可以按需使用，或者使用preset 来使用某些 plugin 集合，但是因为需要使用的 plugin 过多而又采用逐个安装时，容易出错，效率低，因此常使用 preset 方式。</li></ul></blockquote></li> <li><h4 id="插件路径写法-对preset-和-plugins-一样"><a href="#插件路径写法-对preset-和-plugins-一样" class="header-anchor">#</a> 插件路径写法(对preset 和 plugins 一样)</h4> <blockquote><ul><li>全名。babel 会到 node_modules 中检查。</li> <li>绝对路径。</li> <li>简写。若包的名称以 <code>babel-plugin-</code> 为前缀，则可以省掉此前缀。此方式也适用于范围包。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  // 全名
+  &quot;plugins&quot;: [&quot;babel-plugin-myPlugin&quot;]
+  // 绝对路径
+  &quot;plugins&quot;: [&quot;./node_modules/asdf/plugin&quot;]
+  // 简写
+   &quot;plugins&quot;: [
+    &quot;myPlugin&quot;,
+    &quot;babel-plugin-myPlugin&quot; // 等同
+   ]
+   // 范围包
+   &quot;plugins&quot;: [
+    &quot;@org/babel-plugin-name&quot;,
+    &quot;@org/name&quot; // 等同
+    ],
+    &quot;presets&quot;:[
+    	&quot;es2015&quot;,
+    	&quot;babel-preset-es2015&quot;  // 等同
+    ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div></blockquote></li> <li><h4 id="插件实际运行顺序"><a href="#插件实际运行顺序" class="header-anchor">#</a> 插件实际运行顺序</h4> <blockquote><ul><li>plugins 在 presets 之前运行；</li> <li>plugins 数组中的插件从前向后运行；</li> <li>presets 数组中的插件从后向前运行；</li></ul></blockquote></li> <li><h4 id="分类"><a href="#分类" class="header-anchor">#</a> 分类</h4> <blockquote><p>主要分为 preset 和 plugin 两大类。</p></blockquote></li> <li><h5 id="插件的两种模式"><a href="#插件的两种模式" class="header-anchor">#</a> 插件的两种模式</h5> <blockquote><p>Babel中的许多插件有两种模式：</p> <ul><li>普通模式尽可能遵循ECMAScript 6的语义。</li> <li>宽松模式可产生ES5代码,更简单。</li></ul> <p>通常，建议不要使用宽松模式。利弊是：</p> <ul><li>优点：生成的代码可能更快，并且与旧引擎更兼容。它还倾向于更清洁，更“ ES5风格”。</li> <li>缺点：当您从已编译的ES6切换到本机ES6时，您可能会在以后遇到问题。那很少值得冒险。</li></ul></blockquote></li> <li><h4 id="preset-和-plugin"><a href="#preset-和-plugin" class="header-anchor">#</a> preset 和 plugin</h4> <blockquote><ul><li>preset 预设，主要是对语法环境的配置, 可以视为plugin 的合集，一般某个 preset 其内部都会包含多个 plugin ，实际项目中若preset 中已经包含了某个 plugin , 那么在plugins 配置中就不需要再 加入此 plugin 了。</li> <li><strong>自定义preset 或 plugin</strong> 。 实际开发中，使用的preset 和 plugin 相对比较固定，如react 和vue 项目。因此可以写成固定配置，在项目中使用。只需要返回一个插件数组即可，Presets 可以包含其他的 presets 以及带有选项的插件。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// react-preset.js ，
+module.exports = {
+  presets: [
+    require(&quot;babel-preset-es2015&quot;),
+  ],
+  plugins: [    
+    require(&quot;babel-plugin-transform-react-jsx&quot;),
+  ]
+};
+// .babelrc
+{
+  &quot;presets&quot;: [  // 直接引用，不需要在配置plugin了。
+    &quot;./react-preset.js&quot;
+  ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><ul><li>plugin 或 preset 的配置项写法</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+    &quot;presets&quot;: [ 
+        preset01, // 没有配置
+        [ preset02, preset02Options ] // 有配置
+    ]
+}
+// 实例
+{
+  &quot;presets&quot;: [
+    [&quot;es2015&quot;, {
+      &quot;loose&quot;: true,
+      &quot;modules&quot;: false
+    }]
+  ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div></blockquote></li> <li><h4 id="常见插件及使用场景-以下均使用-babel-7"><a href="#常见插件及使用场景-以下均使用-babel-7" class="header-anchor">#</a> 常见插件及使用场景(以下均使用 babel 7)</h4> <ol><li><h5 id="babel-core-babel-cli"><a href="#babel-core-babel-cli" class="header-anchor">#</a> @babel/core，@babel/cli</h5> <blockquote><p>babel 的核心功能，和命令行工具，使用babel 时必须安装。</p></blockquote></li></ol> <blockquote><p>包含babel 工作过程中必需的三个插件 @babel/parser ，@babel/traverse ，@babel/generator 。还包含其他的插件。</p> <ul><li>@babel/types：在使用 @babel/traverse 遍历的过程中，可以用它验证 AST 节点的类型，或者构建 AST 节点。</li> <li>@babel/helper：babel 使用到的一些工具函数都在这个包里面，例如 _typeof 用于判断变量类型、_extends 用于创建一个新的对象等等。</li></ul></blockquote> <ol start="2"><li><h5 id="babel-preset-env"><a href="#babel-preset-env" class="header-anchor">#</a> @babel/preset-env</h5> <blockquote><p>可以在项目中使用最新的 js 语法，包含了 polyfill  。preset<code>es2015, es2016, es2017</code>已经被Babel官方给废弃掉了。官方推荐使用<code>babel-preset-env</code> 。官方说法：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>在没有任何配置选项的情况下，babel-preset-env 与 babel-preset-latest（或者babel-preset-es2015，babel-preset-es2016和babel-preset-es2017一起）的行为完全相同
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li><em>不</em>支持<code>stage-x</code>插件，因此在presets 数组中另外配置 stage-x；</li> <li>配置选项有 targets , browsers , loose ， debug, whitelist 等。</li> <li>targets ：默认情况下，如果没有设置target或ignoreBrowserslistConfig选项，@babel/preset-env将使用package.json中的 browserslist 配置项。对于基于浏览器或Electron的项目，可以使用   .babelrc  文件来指定目标。如果未指定目标，则<code>@babel/preset-env</code>将默认转换所有ECMAScript 2015+代码。实际开发中，应该指定针对的浏览器。babel 会依赖浏览器版本，对不支持的部分才作转换，已经支持的部分不转换。</li> <li><code>exclude/include</code>: 编译时排除或使用某插件。</li> <li><code>modules</code>: 是否编译模块导入导出语句webpack 和 rollup 都可以对 es 模块做 <a href="https://rollupjs.org/zh#tree-shaking" target="_blank" rel="noopener noreferrer">Tree Shaking<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，所以要设置 modules 为 false。</li> <li>应该有</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;presets&quot;: [
+    [
+      &quot;@babel/preset-env&quot;,
+      {targets: { // preset-env 只会为指定的浏览器没有的功能加载转换
+            edge: &quot;17&quot;,
+            firefox: &quot;60&quot;,
+            chrome: &quot;67&quot;,
+            safari: &quot;11.1&quot;
+      }
+	]
+]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><blockquote><p>targets 的重要属性：</p> <ul><li><p>esmodules:  true或false。指定此选项时，浏览器目标将被忽略。您可以结合使用此方法，<script type="module"></script>以有条件地向用户提供较小的脚本;</p></li> <li><p>loose : 预设中所有插件是否开启宽松模式。默认 false；</p></li> <li><p>useBuiltIns。配置如何处理 polyfill，值默认为 false ， 可为 'entry'，‘usage’。</p> <blockquote><ul><li>useBuiltIns: 'usage'。根据 targets 中的浏览器版本，只引入浏览器不支持并且有在代码中使用到的 API。按需引入，否则代码会变得庞大。此时需要配置 corejs ，否则 webpack 会报警告。此时不需要再在入口文件或者webpack中 import 或者 require    @babel/polyfill 了，但是 @babel/polyfill  依然要安装。</li> <li>useBuiltIns: 'entry'。根据 targets 中的浏览器版本，只引入浏览器不支持的 API。在入口文件中使用polyfill。</li> <li>useBuiltIns: false | 不设置。不通过 preset-env 启用 polyfill。此时应该在 webpack 中使用polyfill。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  &quot;presets&quot;: [
+  	 [&quot;@babel/preset-env&quot;, {
+  	   &quot;useBuiltIns&quot;: &quot;usage&quot;,
+	   &quot;corejs&quot;: 3
+	   }
+	 ]
+  ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div></blockquote></li></ul></blockquote></blockquote></li> <li><h5 id="babel-preset-stage-x-babel7-中已经废弃"><a href="#babel-preset-stage-x-babel7-中已经废弃" class="header-anchor">#</a> @babel/preset-stage-x  （babel7 中已经废弃）</h5> <blockquote><ul><li>stage 说明。
+<ul><li>Stage 0 - Strawman（展示阶段）</li> <li>Stage 1 - Proposal（征求意见阶段）</li> <li>Stage 2 - Draft（草案阶段）。一个提案只要能进入 Stage 2，就差不多肯定会包括在以后的正式标准里面。开发时使用stage-2就可以。</li> <li>Stage 3 - Candidate（候选人阶段）</li> <li>Stage 4 - Finished（定案阶段）</li></ul></li> <li>当某些语法已经提案，但是还没有成为标准，也就是没有添加到 preset-env 中时，就需要 stage-x 来补充语法支持了。stage-4 不存在，需要引入es2015~es2017的presets来支持。一般时候使用 stage-2 即可。@babel/preset-env 并不包含 stage-x。</li> <li>每年 stage-4 的特性会被加入到 ECMAScript 标准当中去，例如 Async functions 是 2017 年加入标准的，所以可以称它为 ES2017。所以 stage-0 ~ stage-3 以及 stage-4 被合入之前，这些新特性其实都不能叫做 ECMAScript 标准。</li> <li>提案阶段的 <strong>转换插件</strong> 现在命名是以 plugin-proposal 开头，已经加入标准的特性的 <strong>转换插件</strong> 以 plugin-transform 开头。另外如果大家都在使用提案阶段的新特性，那么会给改进这些新特性带来压力，例如大家可能是希望保持现状，不影响已有功能，而不是改进它。</li> <li>使用 stage-0 的现象变得很常见，这是很危险的。</li> <li>如果引入的预设<code>stage-x</code>过大的话，可以在预设中去掉<code>stage-x</code>转而在<code>Plugin</code>中加入不支持的语法，如：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// .babelrc
+{
+	&quot;presets&quot;: [
+		&quot;env&quot;,
+	],
+	&quot;plugin&quot;: [
+		&quot;transform-decorators-legacy&quot;, // 转译@修饰器
+		&quot;transform-object-rest-spread&quot; // 转译...拓展运算符
+		”transform-arrow-functions“    // 转译箭头函数
+	]
+}		
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></blockquote></li> <li><h5 id="babel-polyfill"><a href="#babel-polyfill" class="header-anchor">#</a> @babel.polyfill</h5> <blockquote><p>包含一个 regenerator runtime 和 core-js，可以完全模拟 ES6+环境，不包含 stage-4，将在源代码之前运行。</p> <ul><li><p>安装 ： npm i @babel/polyfill   -S</p></li> <li><p>使用，代码框内两种方式任选一，使用时最好配合 preset-env 实现按需引入，而不是引入整个 polyfill。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> // 在 webpack 中  
+module.exports = {
+  entry: [&quot;@babel/polyfill&quot;, &quot;./app/js&quot;],
+};
+// 或在入口文件 main.js 中 import 或者 require
+import &quot;@babel/polyfill&quot;;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li></ul></blockquote></li></ol> <blockquote><ul><li>和 @babel/preset-env  的 useBuiltIns 一起使用 ：</li></ul> <blockquote><ul><li>useBuiltIns: 'usage' ，此时对 polyfill 是按需引入，就不要再在 webpack 或者 入口 main.js 中引入了。注意，@babel/polyfill 依然需要安装。</li> <li>useBuiltIns: 'entry'，就在入口文件 main.js 中 import 或者 require。</li> <li>指定 useBuiltIns 的值或者 设置 useBuiltIns: false.，即不处理polyfill，此时应该在webpack.config.js  中添加 @babel/polyfill，即以上方式一。</li></ul></blockquote> <ul><li>没有和 @babel/preset-env 一起用 ，以上两种方式任选一,此时整体引入。</li></ul></blockquote></li> <li><h5 id="babel-plugin-transform-runtime"><a href="#babel-plugin-transform-runtime" class="header-anchor">#</a> @babel/plugin-transform-runtime</h5> <blockquote><ul><li>安装 ： npm i @babel/runtime  -S</li></ul></blockquote></li> <li><h5 id="babel-preset-react"><a href="#babel-preset-react" class="header-anchor">#</a> @babel/preset-react</h5> <blockquote><p>针对 jsx 和 react 使用，</p></blockquote> <ol start="7"><li><h5 id="babel-preset-flow"><a href="#babel-preset-flow" class="header-anchor">#</a> @babel/preset-flow</h5> <blockquote><p>可以删除类型注释。babel 本身不会进行类型检查。仍可以使用 Flow 或者 TypeScript 来进行类型检查。</p></blockquote></li> <li><h5 id="babel-preset-typescript"><a href="#babel-preset-typescript" class="header-anchor">#</a> @babel/preset-typescript</h5></li> <li><h5 id="vue-babel-preset-app"><a href="#vue-babel-preset-app" class="header-anchor">#</a> @vue/babel-preset-app</h5></li> <li><h5 id="vue-babel-preset-jsx"><a href="#vue-babel-preset-jsx" class="header-anchor">#</a> @vue/babel-preset-jsx</h5></li></ol></li></ol> <ul><li></li> <li><p>@babel/preset-typescript</p></li> <li><p>使用在 react 项目中，可以转换 jsx 和react 语法。</p> <ul><li>安装。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install --save-dev @babel/preset-react
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>使用，也可以不带后面的对象选项，直接使用。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;presets&quot;: [
+    [
+      &quot;@babel/preset-react&quot;,
+      {
+        &quot;pragma&quot;: &quot;dom&quot;, // default pragma is React.createElement
+        &quot;pragmaFrag&quot;: &quot;DomFrag&quot;, // default is React.Fragment
+        &quot;throwIfNamespace&quot;: false // defaults to true
+      }
+    ]
+  ]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="关于-项目中的-browserslist"><a href="#关于-项目中的-browserslist" class="header-anchor">#</a> 关于 项目中的 Browserslist</h4> <blockquote><p>可以在项目中运行 npx browserslist 查看项目所支持的浏览器</p></blockquote></li> <li><p>在 package.json中 配置，</p> <blockquote><p>defaults ，默认值：   &gt; 0.5%, last 2 versions, Firefox ESR, not dead</p> <p>dead是指24个月内没有官方支持或更新的。</p> <p>使用 npx browserslist 命令可以查看当前项目支持的 浏览器。</p> <p>详情见：</p> <p>https://github.com/browserslist/browserslist#queries</p> <p>https://github.com/browserslist/browserslist-example</p></blockquote></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;browserslist&quot;: [ &quot;Android &gt;= 4.0&quot;, &quot;iOS &gt;= 8&quot; ]
+&quot;browserslist&quot;: [
+    &quot;defaults&quot;,
+    &quot;not IE 11&quot;,
+    &quot;not IE_Mob 11&quot;,
+    &quot;maintained node versions&quot;
+  ]
+  // 可以加环境 env 变量
+  &quot;browserslist&quot;: {
+    &quot;production&quot;: [
+      &quot;&gt; 1%&quot;,
+      &quot;ie 10&quot;
+    ],
+    &quot;modern&quot;: [
+      &quot;last 1 chrome version&quot;,
+      &quot;last 1 firefox version&quot;
+    ],
+    &quot;ssr&quot;: [
+      &quot;node 12&quot;
+    ]
+  }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><ul><li>或者 在 .browserslistrc  文件中</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code># Browsers that we support
+
+defaults
+not IE 11
+not IE_Mob 11
+maintained node versions
+
+或者
+[production]
+&gt; 1%
+ie 10
+
+[modern]
+last 1 chrome version
+last 1 firefox version
+
+[ssr]
+node 12
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h5 id="关于项目中的-postcss"><a href="#关于项目中的-postcss" class="header-anchor">#</a> 关于项目中的 postcss</h5> <ul><li><p>同样可以在 package.json 中配置 postcss 或者在  .postcssrc 文件中配置</p></li> <li><p>安装</p> <blockquote><p>npm install postcss-cli autoprefixer postcss-preset-env  -D</p> <p>npm install postcss-normalize  -S</p> <p>postcss-preset-env  ： Babel for CSS ，可以对目标浏览器使用最新的 css 语法</p></blockquote></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;postcss&quot;: {
+    &quot;plugins&quot;: {
+    	&quot;postcss-normalize&quot;: {},
+        &quot;postcss-preset-env&quot;: {},
+        &quot;autoprefixer&quot;: {}
+    }
+  },
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="关于项目中的eslint"><a href="#关于项目中的eslint" class="header-anchor">#</a> 关于项目中的eslint</h4> <ul><li>同样在 package.json 中加入配置</li> <li>安装  npm install eslint eslint-plugin-compat  -D</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;eslintConfig&quot;: {
+   &quot;parserOptions&quot;: {
+     &quot;ecmaVersion&quot;: 6
+   },
+   &quot;plugins&quot;: [
+    // 插件名简写，完整为 eslint-plugin-compat，此插件可以判断项目目标浏览器是否兼容某个 API,在必要时给出提醒
+     &quot;compat&quot; 
+   ],
+   &quot;rules&quot;: {
+     &quot;compat/compat&quot;: &quot;warn&quot;
+   }
+ },
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h5 id="关于项目中的-stylelint"><a href="#关于项目中的-stylelint" class="header-anchor">#</a> 关于项目中的 stylelint</h5> <ul><li>安装 npm install stylelint stylelint-no-unsupported-browser-features  -D ； // 此插件可以判断目标浏览器是否兼容某个 css 语法</li> <li>同样在 package.json 中的 stylelint 项 或 .stylelintrc 文件中</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;stylelint&quot;: {
+   &quot;plugins&quot;: [
+     &quot;stylelint-no-unsupported-browser-features&quot;
+   ],
+   &quot;rules&quot;: {
+     &quot;plugin/no-unsupported-browser-features&quot;: [true, {
+         &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;Last 2 versions&quot;], // 如果不指定，就以项目中的为准
+         &quot;ignore&quot;: [&quot;rem&quot;]
+      }]
+   },
+   &quot;defaultSeverity&quot;: &quot;warning&quot;
+},
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="npx-babel"><a href="#npx-babel" class="header-anchor">#</a> npx babel</h4> <blockquote><ul><li>基本：先安装<code>@babel/cli</code>，<code>@babel/core</code>然后再安装<code>npx babel</code>，否则<code>npx</code>将安装过期的<code>babel</code>6.x。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 将目标编译并输出指定目录
+npx babel script.js --out-file script-compiled.js
+或者 npx babel script.js -o script-compiled.js
+// 需要每次文件更改时自动编译，使用 --watch 或 -w
+npx babel script.js --watch --out-file script-compiled.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>source-map 模式。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 使用 --source-maps 或 -s 开启
+npx babel script.js --out-file script-compiled.js --source-maps
+// 使用内联方式
+npx babel script.js --out-file script-compiled.js --source-maps inline
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>编译目录</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 使用--out-dir或者-d将整个src目录编译输出到lib目录
+npx babel src --out-dir lib 
+// 编译整个src目录输出为单个串联文件。
+npx babel src --out-file script-compiled.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>忽略文件</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 忽略规格和测试文件
+npx babel src --out-file script-compiled.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>复制文件</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 将src中的内容不编译复制到lib
+npx babel src --out-dir lib --copy-files
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>使用指定的babel 配置文件来编译</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>npx babel --config-file /path/to/my/babel.config.json --out-dir dist ./src
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>babel-runtime 有个缺点，babel-runtime可以检测并转换ES6的静态方法，但是它不模拟实例方法，即内置对象原型上的方法，所以类似Array.prototype.find，通过babel-runtime是无法使用的。使用<code>babel-runtime/core-js</code>中的模块来转换</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  &quot;presets&quot;: [
+    [
+      &quot;env&quot;,
+      {
+        &quot;targets&quot;: { // 目标环境
+          &quot;browsers&quot;: [ // 浏览器
+            &quot;last 2 versions&quot;,
+            &quot;ie &gt;= 10&quot;
+          ],
+          &quot;node&quot;: &quot;current&quot; // node
+        },
+        &quot;modules&quot;: true,  // 是否转译module syntax，默认是 commonjs
+        &quot;debug&quot;: true, // 是否输出启用的plugins列表
+        &quot;spec&quot;: false, // 是否允许more spec compliant，但可能转译出的代码更慢
+        &quot;loose&quot;: false, // 是否允许生成更简单es5的代码，但可能不那么完全符合ES6语义
+        &quot;useBuiltIns&quot;: false, // 怎么运用 polyfill
+        &quot;include&quot;: [], // 总是启用的 plugins
+        &quot;exclude&quot;: [],  // 强制不启用的 plugins
+        &quot;forceAllTransforms&quot;: false, // 强制使用所有的plugins，用于只能支持ES5的uglify可以正确压缩代码
+      }
+    ]
+  ],
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/30/2022, 9:27:19 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f835a974.js" defer></script><script src="/assets/js/2.4328fceb.js" defer></script><script src="/assets/js/10.a49e9ac0.js" defer></script>
+  </body>
+</html>
