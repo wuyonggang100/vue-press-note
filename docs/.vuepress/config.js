@@ -78,7 +78,7 @@ module.exports = {
             },
             {
               title: '02.记不住的js之三',
-              path: '/javascript/02.记不住的js之三',
+              path: '/javascript/03.记不住的js之三',
             },
           ],
         },
