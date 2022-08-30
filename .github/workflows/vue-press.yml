@@ -1,8 +1,9 @@
 name: 'github actions build and deploy vue-press'
 on:
   push:
+    # 此此项目的 master 为源码分支，当此分支被 push 时 ，就触发 action deploy
     branches:
-      - main # 此此项目的 master 分支被 push 时 ，就触发 action deploy
+      - main
 jobs:
   build-and-deploy:
     # 使用 ubuntu 服务器
@@ -21,19 +22,13 @@ jobs:
       - name: Deploy
         # 使用别人写好的 action 部署
         uses: JamesIves/github-pages-deploy-action@releases/v3
-        # uses: peaceiris/actions-gh-pages@v3
         with:
-          # github_token: ${{ secrets.GITHUB_TOKEN }}
-          # # 静态资源目录设置
-          # publish_dir: docs/.vuepress/dist
-          # # 默认发布到 gh-pages 分支上，可以指定特定的发布分支（不能选拉取代码的分支）
-          # publish_branch: gh-pages
-          # full_commit_message: ${{ github.event.head_commit.message }}
-
           # ACCESS_TOKEN 需要到 github 上去增加一个secrets，并命名为 ACCESS_TOKEN
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
           # GITHUB_TOKEN 为内置变量，无需在secrets手动添加
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # 部署到 github-pages, gh-pages 为目标deploy分支，master 为当前触发分支，如果你的开发分支为 main，你需要更改为 main，
+
+          # 将本仓库的 gh-pages 分支作为静态部署分支，前提是此仓库为分私有仓库，
           BRANCH: gh-pages
           FOLDER: docs/.vuepress/dist

@@ -12,7 +12,7 @@ module.exports = {
     lineNumbers: true, // 代码块显示行号
   },
   themeConfig: {
-    repo: 'wuyongganggang100/vue-press-note', // 默认是 false, 设置为 true 来启用，右上角会出现 github 跳转链接
+    repo: 'https://github.com/wuyonggang100/vue-press-note', // 默认是 false, 设置为 true 来启用，右上角会出现 github 跳转链接
     lastUpdated: 'Last Updated', // 每个文档展示最近更新时间
     nav: [
       // 右侧导航栏配置，默认指向目录下的 README.md 文件
