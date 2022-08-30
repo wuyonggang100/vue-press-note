@@ -11,6 +11,7 @@ jobs:
     steps:
       # 拉取代码
       - name: Checkout
+        # 使用已有的action
         uses: actions/checkout@v2.3.1
         with:
           persist-credentials: false
@@ -29,6 +30,6 @@ jobs:
           # GITHUB_TOKEN 为内置变量，无需在secrets手动添加
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # 将本仓库的 gh-pages 分支作为静态部署分支，前提是此仓库为分私有仓库，
+          # 将本仓库的 gh-pages 分支作为静态部署分支，前提是此仓库为公开仓库，私有仓库会收费，
           BRANCH: gh-pages
           FOLDER: docs/.vuepress/dist
