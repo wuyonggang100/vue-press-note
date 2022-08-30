@@ -4,7 +4,7 @@
 set -e
 
 # 生成静态文件
-npm run docs:build
+npm run build
 
 # 进入生成的文件夹
 cd docs/.vuepress/dist
@@ -18,9 +18,12 @@ git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-git push git@github.com:wuyonggang100/wuyonggang100.github.io.git master
+# git push git@github.com:wuyonggang100/wuyonggang100.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+# git push -f git@github.com:<wuyonggang100>/vuepress-note.git master:gh-pages
+git remote add origin Build software better, together<wuyonggang100>/vuepress-note.git
+git push origin --delete gh-pages
+git push origin master:gh-pages
 
 cd -

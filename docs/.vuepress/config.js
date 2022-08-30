@@ -7,11 +7,13 @@ module.exports = {
     ['link', { rel: 'icon', href: '/logo.jpg' }], // 增加一个自定义的 favicon(网页标签的图标)
   ],
   port: 8086,
-  base: '/vue-press-note/', // 这是部署到github相关的配置
+  base: '/vuepress-note/', // 这是部署到github相关的配置
   markdown: {
     lineNumbers: true, // 代码块显示行号
   },
   themeConfig: {
+    repo: 'wuyongganggang100/vue-press-note', // 默认是 false, 设置为 true 来启用，右上角会出现 github 跳转链接
+    lastUpdated: 'Last Updated', // 每个文档展示最近更新时间
     nav: [
       // 右侧导航栏配置，默认指向目录下的 README.md 文件
       { text: '主页', link: '/' },
@@ -116,6 +118,14 @@ module.exports = {
         },
       ],
     },
+    // 自定义样式
+    scss: {
+      // includePaths: [path.join(__dirname, '../../styles')],
+    },
     sidebarDepth: 3, // 侧边栏显示3级
+    markdown: {
+      // markdown 插入代码时展示对应行数
+      lineNumbers: true,
+    },
   },
 };
