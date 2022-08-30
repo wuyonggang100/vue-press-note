@@ -8,6 +8,7 @@ jobs:
     # 使用 ubuntu 服务器
     runs-on: ubuntu-latest
     steps:
+      # 拉取代码
       - name: Checkout
         uses: actions/checkout@v2.3.1
         with:
@@ -26,5 +27,5 @@ jobs:
           # GITHUB_TOKEN 为内置变量，无需在secrets手动添加
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # 部署到 github-pages, gh-pages 为目标deploy分支，master 为当前触发分支，如果你的开发分支为 main，你需要更改为 main，
-          BRANCH: gh-pages
+          BRANCH: master
           FOLDER: docs/.vuepress/dist
