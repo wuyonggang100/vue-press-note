@@ -21,8 +21,8 @@ git commit -m 'deploy'
 # git push git@github.com:wuyonggang100/wuyonggang100.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<wuyonggang100>/vuepress-note.git master:gh-pages
-git remote add origin Build software better, together<wuyonggang100>/vuepress-note.git
+# git push -f git@github.com:<wuyonggang100>/vue-press-note.git master:gh-pages
+git remote add origin Build software better, together<wuyonggang100>/vue-press-note.git
 git push origin --delete gh-pages
 git push origin master:gh-pages
 
