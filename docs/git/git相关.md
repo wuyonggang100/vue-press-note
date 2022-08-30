@@ -73,7 +73,7 @@ git branch -D xxx
 >
 > 如下表示设置为5G
 
-```
+```sh
 git config --global http.postBuffer 5242880000
 
 git config --global https.postBuffer 5242880000
@@ -103,8 +103,6 @@ git clean -f .git/index.lock
 ```
 
 
-
-<<<<<<< Updated upstream
 ## git rebase
 
 - 代码合并有两种方式：合并 (merge) 和衍合 (rebase) , 衍变又称变基。 变基可以让代码的提交历史更简洁清晰，不杂乱。实际的开发工作是并行的，但它们看上去就像是串行的一样，提交历史是一条直线没有分叉。
@@ -193,11 +191,10 @@ git merge experiment
 
 
 
-=======
 
 
 ## 主分支上修改的内容同步到子分支，非 merge
->>>>>>> Stashed changes
+
 
 
 
