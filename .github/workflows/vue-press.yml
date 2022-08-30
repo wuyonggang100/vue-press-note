@@ -23,17 +23,17 @@ jobs:
         # uses: JamesIves/github-pages-deploy-action@releases/v3
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # 静态资源目录设置
-          publish_dir: docs/.vuepress/dist
-          # 默认发布到 gh-pages 分支上，可以指定特定的发布分支（不能选拉取代码的分支）
-          publish_branch: gh-pages
-          full_commit_message: ${{ github.event.head_commit.message }}
+          # github_token: ${{ secrets.GITHUB_TOKEN }}
+          # # 静态资源目录设置
+          # publish_dir: docs/.vuepress/dist
+          # # 默认发布到 gh-pages 分支上，可以指定特定的发布分支（不能选拉取代码的分支）
+          # publish_branch: gh-pages
+          # full_commit_message: ${{ github.event.head_commit.message }}
 
           # ACCESS_TOKEN 需要到 github 上去增加一个secrets，并命名为 ACCESS_TOKEN
-          # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          # # GITHUB_TOKEN 为内置变量，无需在secrets手动添加
-          # # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # # 部署到 github-pages, gh-pages 为目标deploy分支，master 为当前触发分支，如果你的开发分支为 main，你需要更改为 main，
-          # BRANCH: gh-pages
-          # FOLDER: docs/.vuepress/dist
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # GITHUB_TOKEN 为内置变量，无需在secrets手动添加
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 部署到 github-pages, gh-pages 为目标deploy分支，master 为当前触发分支，如果你的开发分支为 main，你需要更改为 main，
+          BRANCH: gh-pages
+          FOLDER: docs/.vuepress/dist
