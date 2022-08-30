@@ -19,14 +19,15 @@ jobs:
 
       - name: Deploy
         run: |
-          exec /deploy.sh
+
+        # exec /deploy.sh
         # 使用别人写好的 action 部署
-        # uses: JamesIves/github-pages-deploy-action@releases/v3
-        # with:
-        #   # ACCESS_TOKEN 需要到 github 上去增加一个secrets，并命名为 ACCESS_TOKEN
-        #   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        #   # GITHUB_TOKEN 为内置变量，无需在secrets手动添加
-        #   # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        #   # 部署到 github-pages, gh-pages 为目标deploy分支，master 为当前触发分支，如果你的开发分支为 main，你需要更改为 main，
-        #   BRANCH: gh-pages
-        #   FOLDER: docs/.vuepress/dist
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          # ACCESS_TOKEN 需要到 github 上去增加一个secrets，并命名为 ACCESS_TOKEN
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # GITHUB_TOKEN 为内置变量，无需在secrets手动添加
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 部署到 github-pages, gh-pages 为目标deploy分支，master 为当前触发分支，如果你的开发分支为 main，你需要更改为 main，
+          BRANCH: gh-pages
+          FOLDER: docs/.vuepress/dist
