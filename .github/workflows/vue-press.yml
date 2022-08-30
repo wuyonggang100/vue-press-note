@@ -19,8 +19,7 @@ jobs:
 
       - name: Deploy
         run: |
-          cd ..
-          exec deploy.sh
+          exec /deploy.sh
         # 使用别人写好的 action 部署
         # uses: JamesIves/github-pages-deploy-action@releases/v3
         # with:
