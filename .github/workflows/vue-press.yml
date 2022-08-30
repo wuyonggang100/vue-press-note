@@ -19,7 +19,8 @@ jobs:
 
       - name: Deploy
         # 使用别人写好的 action 部署
-        uses: JamesIves/github-pages-deploy-action@3.5.9
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        # uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
           # ACCESS_TOKEN 需要到 github 上去增加一个secrets，并命名为 ACCESS_TOKEN
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
