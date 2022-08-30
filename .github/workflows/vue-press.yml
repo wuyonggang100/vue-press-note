@@ -1,0 +1,30 @@
+name: 'github actions build and deploy vue-press'
+on:
+  push:
+    branches:
+      - main # 此此项目的 main 分支被 push 时 ，就触发 action deploy
+jobs:
+  build-and-deploy:
+    # 使用 ubuntu 服务器
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+      - name: install and build
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy
+        # 使用别人写好的 action 部署
+        uses: JamesIves/github-pages-deploy-action@3.5.9
+        with:
+          # ACCESS_TOKEN 需要到 github 上去增加一个secrets，并命名为 ACCESS_TOKEN
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # GITHUB_TOKEN 为内置变量，无需在secrets手动添加
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 部署到 github-pages, gh-pages 为目标deploy分支，master 为当前触发分支，如果你的开发分支为 main，你需要更改为 main，
+          BRANCH: gh-pages
+          FOLDER: docs/.vuepress/dist
