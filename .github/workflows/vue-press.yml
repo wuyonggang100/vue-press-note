@@ -1,7 +1,7 @@
 name: 'github actions build and deploy vue-press'
 on:
   push:
-    # 此此项目的 master 为源码分支，当此分支被 push 时 ，就触发 action deploy
+    # 此此项目的 main 为源码分支，当此分支被 push 时 ，就触发 action deploy
     branches:
       - main
 jobs:
